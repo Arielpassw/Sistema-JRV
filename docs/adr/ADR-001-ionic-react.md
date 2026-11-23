@@ -21,7 +21,7 @@ Cada integrante realizará la implementación correspondiente en su propio repos
 
 ## Trazabilidad
 
-- **Commit de documentación ADR:** pendiente de registrar.
+- **Commit de documentación ADR:** [469d9fc — Documentación ADR](https://github.com/Arielpassw/Sistema-JRV/commit/469d9fc)
 - **Commit de implementación:** [556522a - Inicialización de la estructura del proyecto](https://github.com/Arielpassw/Sistema-JRV/commit/556522a).
 - **Repositorio de implementación:** https://github.com/Arielpassw/Sistema-JRV
 

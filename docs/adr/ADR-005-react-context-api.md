@@ -119,14 +119,14 @@ ionic serve
 
 ## Trazabilidad
 
-**Repositorio de implementación:**  
+- **Repositorio de implementación:**  
 https://github.com/Arielpassw/Sistema-JRV
 
-**Commit de documentación ADR:** pendiente de registrar una vez se realice el commit conjunto de los seis registros de decisiones arquitectónicas.
+- **Commit de documentación ADR:** [469d9fc — Documentación ADR](https://github.com/Arielpassw/Sistema-JRV/commit/469d9fc)
 
-**Commit de implementación:** pendiente de identificar el commit específico que respalde la implementación de Zustand y React Context API.
+- **Commit de implementación:** pendiente de identificar el commit específico que respalde la implementación de Zustand y React Context API.
 
-**Responsabilidad:** la decisión arquitectónica fue grupal; la implementación documentada en este repositorio corresponde a Ariel Alexander Arias Toasa.
+La decisión arquitectónica fue grupal; la implementación documentada en este repositorio corresponde a Ariel Alexander Arias Toasa.
 
 ## Consenso del equipo
 

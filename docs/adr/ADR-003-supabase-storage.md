@@ -130,7 +130,7 @@ Las pruebas funcionales de carga y visualización desde la aplicación móvil de
 
 ## Trazabilidad
 
-- **Commit de documentación ADR:** pendiente de registrar después de incorporar los seis ADR al repositorio.
+- **Commit de documentación ADR:** [469d9fc — Documentación ADR](https://github.com/Arielpassw/Sistema-JRV/commit/469d9fc)
 - **Commit de implementación:** pendiente de identificar el commit específico que incorpore la configuración del almacenamiento y sus políticas.
 - **Repositorio de implementación:** https://github.com/Arielpassw/Sistema-JRV
 
