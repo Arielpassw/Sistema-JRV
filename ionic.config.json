@@ -1,0 +1,7 @@
+{
+  "name": "cne-control-electoral",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
