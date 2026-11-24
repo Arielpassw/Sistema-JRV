@@ -122,7 +122,7 @@ https://github.com/Arielpassw/Sistema-JRV
 
 - **Commit de documentación ADR:** [469d9fc — Documentación ADR](https://github.com/Arielpassw/Sistema-JRV/commit/469d9fc)
 
-- **Commit de implementación:** pendiente de identificar el commit específico que respalde la integración de Capacitor y sus plugins.
+- **Commit de implementación:** [ 0ec411d - Capacitor](https://github.com/Arielpassw/Sistema-JRV/commit/0ec411d)
 
 La decisión arquitectónica fue grupal; la implementación documentada en este repositorio corresponde a Ariel Alexander Arias Toasa.
 

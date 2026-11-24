@@ -130,6 +130,7 @@ Las pruebas funcionales completas de todos los roles y módulos deberán registr
 
 - **Commit de documentación ADR:** [469d9fc — Documentación ADR](https://github.com/Arielpassw/Sistema-JRV/commit/469d9fc)
 - **Commit de implementación:** [`cc00d88` — Modelos TypeScript de tablas electorales](https://github.com/Arielpassw/Sistema-JRV/commit/cc00d88).
+[1c30d20 - Implementar servicios de Supabase](https://github.com/Arielpassw/Sistema-JRV/commit/1c30d20)
 - **Repositorio de implementación:** https://github.com/Arielpassw/Sistema-JRV
 
 La configuración del backend y la base de datos fue realizada individualmente por Ariel Alexander Arias Toasa en este repositorio.

@@ -131,7 +131,6 @@ Las pruebas funcionales de carga y visualización desde la aplicación móvil de
 ## Trazabilidad
 
 - **Commit de documentación ADR:** [469d9fc — Documentación ADR](https://github.com/Arielpassw/Sistema-JRV/commit/469d9fc)
-- **Commit de implementación:** pendiente de identificar el commit específico que incorpore la configuración del almacenamiento y sus políticas.
 - **Repositorio de implementación:** https://github.com/Arielpassw/Sistema-JRV
 
 La configuración del bucket y sus políticas fue realizada individualmente por Ariel Alexander Arias Toasa en este repositorio.

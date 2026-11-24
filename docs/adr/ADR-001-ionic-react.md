@@ -23,6 +23,9 @@ Cada integrante realizará la implementación correspondiente en su propio repos
 
 - **Commit de documentación ADR:** [469d9fc — Documentación ADR](https://github.com/Arielpassw/Sistema-JRV/commit/469d9fc)
 - **Commit de implementación:** [556522a - Inicialización de la estructura del proyecto](https://github.com/Arielpassw/Sistema-JRV/commit/556522a).
+- [f741544 - Ionic React](https://github.com/Arielpassw/Sistema-JRV/commit/f741544)
+
+
 - **Repositorio de implementación:** https://github.com/Arielpassw/Sistema-JRV
 
 El commit indicado corresponde a la inicialización de la estructura del proyecto y no representa la implementación completa de todas las funcionalidades.
