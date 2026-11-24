@@ -141,7 +141,7 @@ https://github.com/Arielpassw/Sistema-JRV
 
 - **Commit de documentación ADR:** [469d9fc — Documentación ADR](https://github.com/Arielpassw/Sistema-JRV/commit/469d9fc)
 
-- **Commit de implementación:** pendiente de identificar el commit específico que respalde la creación y configuración del esquema PostgreSQL.
+- **Commit de implementación:** [`cc00d88` — Modelos TypeScript de tablas electorales](https://github.com/Arielpassw/Sistema-JRV/commit/cc00d88).
 
 La decisión arquitectónica fue grupal; la implementación documentada en este repositorio corresponde a Ariel Alexander Arias Toasa.
 
