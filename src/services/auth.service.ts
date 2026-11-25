@@ -222,10 +222,17 @@ export const authService = {
     }
   },
 
+
   async cambiarPasswordInicial(password: string): Promise<void> {
     if (password.length < 8) {
       throw new Error(
         'La contraseña debe tener al menos 8 caracteres.'
+      );
+    }
+
+    if (password === 'Ecuador2026') {
+      throw new Error(
+        'Debes utilizar una contraseña diferente de la contraseña inicial.'
       );
     }
 
@@ -237,7 +244,22 @@ export const authService = {
     );
 
     if (error) {
-      throw new Error(error.message);
+      let mensaje = error.message || 'No se pudo cambiar la contraseña.';
+
+      if (error.context instanceof Response) {
+        try {
+          const respuesta = await error.context.json();
+
+          if (typeof respuesta?.error === 'string') {
+            mensaje = respuesta.error;
+          }
+        } catch {
+          // Se conserva el mensaje original si la respuesta no es JSON.
+        }
+      }
+
+      throw new Error(mensaje);
     }
   },
+
 };

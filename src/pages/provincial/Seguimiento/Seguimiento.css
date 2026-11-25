@@ -1,0 +1,196 @@
+.seguimiento-content {
+  --background: var(--ion-background-color);
+}
+
+.seguimiento-intro {
+  margin: 8px 0 20px;
+}
+
+.seguimiento-intro h1 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.seguimiento-intro p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  line-height: 1.5;
+}
+
+.seguimiento-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  color: var(--ion-color-medium);
+}
+
+.seguimiento-resumen {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.resumen-card {
+  margin: 0;
+  border-radius: 14px;
+}
+
+.resumen-card ion-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px;
+}
+
+.resumen-label {
+  color: var(--ion-color-medium);
+  font-size: 0.82rem;
+}
+
+.resumen-card strong {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ion-color-dark);
+}
+
+.resumen-card small {
+  color: var(--ion-color-medium);
+  font-size: 0.75rem;
+}
+
+.avance-card {
+  margin: 16px 0 24px;
+  border-radius: 14px;
+}
+
+.avance-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.avance-encabezado h2 {
+  margin: 0 0 5px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.avance-encabezado p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.85rem;
+}
+
+.avance-encabezado > strong {
+  color: var(--ion-color-primary);
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.avance-detalle {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  color: var(--ion-color-medium);
+  font-size: 0.8rem;
+}
+
+.recintos-seguimiento {
+  margin-bottom: 24px;
+}
+
+.seguimiento-seccion-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.seguimiento-seccion-titulo h2 {
+  margin: 0 0 5px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.seguimiento-seccion-titulo p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.85rem;
+}
+
+.recintos-seguimiento ion-searchbar {
+  padding-inline: 0;
+  margin-bottom: 8px;
+}
+
+.recinto-seguimiento-item {
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+}
+
+.recinto-seguimiento-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.recinto-seguimiento-titulo h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: normal;
+}
+
+.recinto-seguimiento-datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 10px 0;
+}
+
+.recinto-seguimiento-datos ion-chip {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.recinto-progreso-texto {
+  margin-top: 7px;
+  font-size: 0.78rem;
+  color: var(--ion-color-medium);
+}
+
+.actas-registradas {
+  margin-top: 12px;
+  font-size: 0.82rem;
+}
+
+.actas-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.actas-chips ion-chip {
+  margin: 0;
+  max-width: 100%;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .seguimiento-resumen {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .seguimiento-intro h1 {
+    font-size: 1.8rem;
+  }
+}

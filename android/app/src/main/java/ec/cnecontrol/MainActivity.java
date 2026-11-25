@@ -1,4 +1,4 @@
-﻿package ec.cnecontrol;
+package ec.cnecontrol;
 
 import com.getcapacitor.BridgeActivity;
 

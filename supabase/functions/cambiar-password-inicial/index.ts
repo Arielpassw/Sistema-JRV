@@ -31,13 +31,18 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
+    // 1. Obtener y validar el token de sesión.
     const authorization = req.headers.get('Authorization');
 
     if (!authorization?.startsWith('Bearer ')) {
       return respuesta({ error: 'Sesión no válida.' }, 401);
     }
 
-    const { password } = await req.json();
+    const accessToken = authorization.substring(7);
+
+    // 2. Recibir y validar la nueva contraseña.
+    const body = await req.json();
+    const password = body?.password;
 
     if (
       typeof password !== 'string' ||
@@ -53,25 +58,22 @@ Deno.serve(async (req: Request) => {
       );
     }
 
+    // 3. Obtener las variables de entorno.
     const supabaseUrl = Deno.env.get('SUPABASE_URL');
     const anonKey = Deno.env.get('SUPABASE_ANON_KEY');
     const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
 
     if (!supabaseUrl || !anonKey || !serviceRoleKey) {
       console.error('Faltan variables de entorno de Supabase.');
+
       return respuesta(
         { error: 'Error de configuración del servidor.' },
         500,
       );
     }
 
-    // Cliente asociado a la sesión del usuario.
+    // 4. Verificar la identidad usando el token recibido.
     const userClient = createClient(supabaseUrl, anonKey, {
-      global: {
-        headers: {
-          Authorization: authorization,
-        },
-      },
       auth: {
         autoRefreshToken: false,
         persistSession: false,
@@ -81,13 +83,15 @@ Deno.serve(async (req: Request) => {
     const {
       data: { user },
       error: userError,
-    } = await userClient.auth.getUser();
+    } = await userClient.auth.getUser(accessToken);
 
     if (userError || !user) {
+      console.error('Error verificando sesión:', userError?.message);
+
       return respuesta({ error: 'Sesión no válida.' }, 401);
     }
 
-    // Cliente administrativo: nunca se entrega al frontend.
+    // 5. Crear cliente administrativo exclusivamente en el servidor.
     const adminClient = createClient(
       supabaseUrl,
       serviceRoleKey,
@@ -99,13 +103,23 @@ Deno.serve(async (req: Request) => {
       },
     );
 
+    // 6. Verificar el perfil y el cambio obligatorio.
     const { data: perfil, error: perfilError } = await adminClient
       .from('perfiles')
       .select('id, debe_cambiar_password')
       .eq('id', user.id)
       .maybeSingle();
 
-    if (perfilError || !perfil) {
+    if (perfilError) {
+      console.error('Error consultando perfil:', perfilError.message);
+
+      return respuesta(
+        { error: 'No se pudo consultar el perfil del usuario.' },
+        500,
+      );
+    }
+
+    if (!perfil) {
       return respuesta({ error: 'Perfil no encontrado.' }, 404);
     }
 
@@ -116,18 +130,28 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    // Cambiar primero la contraseña en Supabase Auth.
+    // 7. Actualizar la contraseña del usuario autenticado.
     const { error: passwordError } =
-      await userClient.auth.updateUser({ password });
+      await adminClient.auth.admin.updateUserById(user.id, {
+        password,
+      });
 
     if (passwordError) {
+      console.error(
+        'Error actualizando contraseña en Auth:',
+        passwordError.message,
+      );
+
       return respuesta(
-        { error: 'No se pudo actualizar la contraseña.' },
+        {
+          error: passwordError.message ||
+            'No se pudo actualizar la contraseña.',
+        },
         400,
       );
     }
 
-    // Marcar el cambio obligatorio como completado.
+    // 8. Desactivar la obligación de cambiar la contraseña.
     const { error: updateError } = await adminClient
       .from('perfiles')
       .update({
@@ -138,21 +162,23 @@ Deno.serve(async (req: Request) => {
 
     if (updateError) {
       console.error(
-        'La contraseña cambió, pero no se actualizó el perfil:',
-        updateError,
+        'La contraseña cambió, pero falló la actualización del perfil:',
+        updateError.message,
       );
 
       return respuesta(
         {
           error:
-            'La contraseña se actualizó, pero no se pudo confirmar el cambio en el perfil. Contacta al administrador.',
+            'La contraseña se actualizó, pero no se pudo actualizar el perfil. Contacta al administrador.',
         },
         500,
       );
     }
 
+    // 9. Confirmar operación.
     return respuesta({
       message: 'Contraseña actualizada correctamente.',
+      debeCambiarPassword: false,
     });
   } catch (error) {
     console.error('Error en cambiar-password-inicial:', error);

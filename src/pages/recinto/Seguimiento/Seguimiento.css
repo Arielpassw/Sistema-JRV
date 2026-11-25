@@ -1,0 +1,229 @@
+.seguimiento-recinto-content {
+  --background: var(--ion-background-color);
+}
+
+.seguimiento-recinto-intro {
+  margin: 8px 0 20px;
+}
+
+.seguimiento-recinto-intro h1 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.seguimiento-recinto-intro p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  line-height: 1.5;
+}
+
+.seguimiento-recinto-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  color: var(--ion-color-medium);
+}
+
+.recinto-info-card {
+  margin: 0 0 16px;
+  border-radius: 14px;
+}
+
+.recinto-info-card ion-card-content {
+  padding: 18px;
+}
+
+.recinto-info-label {
+  color: var(--ion-color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.recinto-info-card h2 {
+  margin: 8px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.recinto-info-card p {
+  margin: 5px 0;
+  color: var(--ion-color-medium);
+  font-size: 0.88rem;
+}
+
+.seguimiento-recinto-resumen {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.seguimiento-recinto-resumen ion-card {
+  margin: 0;
+  border-radius: 14px;
+}
+
+.seguimiento-recinto-resumen ion-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px;
+}
+
+.seguimiento-recinto-resumen span {
+  color: var(--ion-color-medium);
+  font-size: 0.82rem;
+}
+
+.seguimiento-recinto-resumen strong {
+  color: var(--ion-color-dark);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.seguimiento-recinto-resumen small {
+  color: var(--ion-color-medium);
+  font-size: 0.75rem;
+}
+
+.seguimiento-recinto-avance {
+  margin: 16px 0 24px;
+  border-radius: 14px;
+}
+
+.seguimiento-recinto-avance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.seguimiento-recinto-avance-header h2 {
+  margin: 0 0 5px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.seguimiento-recinto-avance-header p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.85rem;
+}
+
+.seguimiento-recinto-avance-header > strong {
+  color: var(--ion-color-primary);
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.seguimiento-recinto-avance-detalle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--ion-color-medium);
+  font-size: 0.8rem;
+}
+
+.seguimiento-jrv-section {
+  margin-bottom: 24px;
+}
+
+.seguimiento-jrv-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.seguimiento-jrv-heading h2 {
+  margin: 0 0 5px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.seguimiento-jrv-heading p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.85rem;
+}
+
+.seguimiento-jrv-item {
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+}
+
+.seguimiento-jrv-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.seguimiento-jrv-title h2 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.seguimiento-jrv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.seguimiento-jrv-chips ion-chip {
+  margin: 0;
+  max-width: 100%;
+  font-size: 0.75rem;
+}
+
+.seguimiento-jrv-progreso {
+  margin: 7px 0 14px;
+  color: var(--ion-color-medium);
+  font-size: 0.78rem;
+}
+
+.seguimiento-jrv-subsection {
+  margin-top: 14px;
+}
+
+.seguimiento-jrv-subsection > strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.85rem;
+}
+
+.seguimiento-jrv-subsection > p {
+  color: var(--ion-color-medium);
+  font-size: 0.82rem;
+}
+
+.seguimiento-veedores-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.seguimiento-veedores-lista p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.82rem;
+}
+
+@media (min-width: 768px) {
+  .seguimiento-recinto-resumen {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .seguimiento-recinto-intro h1 {
+    font-size: 1.8rem;
+  }
+}

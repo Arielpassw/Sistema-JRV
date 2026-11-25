@@ -1,3 +1,4 @@
+
 import { supabase } from '../config/supabase';
 import { Asignacion } from '../models';
 import { verificarErrorSupabase } from './supabase-error';
@@ -98,5 +99,23 @@ export const asignacionService = {
     }
 
     return data as Asignacion;
+  },
+
+  async reasignarVeedor(
+    asignacionId: string,
+    nuevaJrvId: string
+  ): Promise<string> {
+    const { data, error } = await supabase.rpc('reasignar_veedor_jrv', {
+      p_asignacion_id: asignacionId,
+      p_nueva_jrv_id: nuevaJrvId,
+    });
+
+    verificarErrorSupabase(error);
+
+    if (!data) {
+      throw new Error('No se pudo completar la reasignación del veedor.');
+    }
+
+    return data as string;
   },
 };

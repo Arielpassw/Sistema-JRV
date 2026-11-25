@@ -1,0 +1,163 @@
+
+.login-content {
+  --background: #f2f5fa;
+}
+
+.login-container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 20px 24px;
+}
+
+.login-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-logo {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  background: #123b70;
+  color: #ffffff;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 22px rgba(18, 59, 112, 0.2);
+}
+
+.login-logo ion-icon {
+  font-size: 42px;
+}
+
+.login-brand h1 {
+  margin: 0;
+  color: #123b70;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.login-brand p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 30px 25px;
+  background: #ffffff;
+  border: 1px solid #e5eaf1;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(15, 40, 75, 0.08);
+}
+
+.login-heading {
+  margin-bottom: 28px;
+}
+
+.login-heading h2 {
+  margin: 0 0 8px;
+  color: #172b4d;
+  font-size: 25px;
+  font-weight: 750;
+}
+
+.login-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.login-field {
+  margin-bottom: 21px;
+}
+
+.login-field ion-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #344563;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-input {
+  --background: #f7f9fc;
+  --border-radius: 10px;
+  --padding-start: 13px;
+  --inner-padding-end: 8px;
+  --min-height: 52px;
+  border: 1px solid #dce3ed;
+  border-radius: 10px;
+}
+
+.login-input ion-icon[slot="start"] {
+  color: #64748b;
+  font-size: 19px;
+  margin-right: 12px;
+}
+
+.login-input ion-input {
+  --color: #172b4d;
+  --placeholder-color: #9aa7b8;
+  font-size: 14px;
+}
+
+.login-recovery {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2px 0 24px;
+}
+
+.login-recovery button {
+  padding: 0;
+  background: transparent;
+  color: #1d5b9e;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-submit {
+  --background: #123b70;
+  --background-hover: #194d8d;
+  --border-radius: 10px;
+  --box-shadow: none;
+  height: 49px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.login-footer {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.login-footer p {
+  margin: 4px 0;
+  color: #8793a4;
+  font-size: 11px;
+}
+
+@media (max-width: 360px) {
+  .login-card {
+    padding: 25px 18px;
+  }
+
+  .login-container {
+    padding-inline: 14px;
+  }
+}

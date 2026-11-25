@@ -1,3 +1,4 @@
+
 import {
   createContext,
   useCallback,
@@ -45,11 +46,26 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, nuevaSesion) => {
+    } = supabase.auth.onAuthStateChange((event, nuevaSesion) => {
       if (!mounted) return;
 
       setSession(nuevaSesion);
       setUser(nuevaSesion?.user ?? null);
+
+      if (
+        event === 'INITIAL_SESSION' ||
+        event === 'SIGNED_IN' ||
+        event === 'USER_UPDATED'
+      ) {
+        setLoading(Boolean(nuevaSesion));
+      }
+
+      if (event === 'SIGNED_OUT' || !nuevaSesion) {
+        setPerfil(null);
+        setLoading(false);
+      }
+
+      setAuthReady(true);
     });
 
     const cargarSesionInicial = async () => {
@@ -60,9 +76,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       if (error) {
         setSession(null);
         setUser(null);
+        setPerfil(null);
+        setLoading(false);
       } else {
         setSession(data.session);
         setUser(data.session?.user ?? null);
+        setLoading(Boolean(data.session));
       }
 
       setAuthReady(true);
@@ -155,7 +174,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         session,
         perfil,
         loading,
-        autenticado: Boolean(user && perfil),
+        autenticado: Boolean(user && perfil && perfil.activo),
         iniciarSesion,
         cerrarSesion,
         recuperarPassword,
